@@ -37,5 +37,8 @@ And now when you close the brace by typing }\*, you will get:
 
 ![final image](https://github.com/Vrroom/copy-paste-vim/blob/master/images/end.png "finally...")
 
+Lastly, the files which you are importing should have a comment
+which looks like this:
 
+// requires : \<vector\> \<queue\> \<iostream\>
 
