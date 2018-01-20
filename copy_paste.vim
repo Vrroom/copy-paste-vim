@@ -62,7 +62,7 @@ import vim, os
 headers = vim.eval("l:header_list")
 to_be_added = set()
 algo_names = vim.eval("l:required").split()[1:]
-file_names = os.listdir(path='.algorithms/')
+file_names = os.listdir(path='/home/sumit/.algorithms/')
 
 def parse_file(name):
     global headers
@@ -84,7 +84,7 @@ def parse_file(name):
 
 for name in algo_names:
     for f_name in file_names:
-        if name[:-1] in f_name:
+        if f_name.startswith(name[:-1]):
             parse_file(f_name)
 
 vim.command("normal! gg")
