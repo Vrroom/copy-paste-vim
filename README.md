@@ -27,4 +27,15 @@ Usage:
 
 Initially when you open a cpp file, your buffer should look something like this:
 
+![initial file](https://github.com/Vrroom/copy-paste-vim/blob/master/images/init.png "In the beginning...")
+
+Then you need to start a new section by typing \*{:
+
+![in the process](https://github.com/Vrroom/copy-paste-vim/blob/master/images/adding.png "adding references to useful files")
+
+And now when you close the brace by typing }\*, you will get:
+
+![final image](https://github.com/Vrroom/copy-paste-vim/blob/master/images/end.png "finally...")
+
+
 
