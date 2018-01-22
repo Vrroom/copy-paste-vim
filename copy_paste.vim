@@ -92,6 +92,7 @@ for library in to_be_added:
     vim.command("normal! O" + "#include " + library)
 
 EOF
+    normal gg=G
     return ""
 endfunction
 
