@@ -12,6 +12,11 @@
 "      algorithms/classes you wish to use and they will be loaded
 
 " C++ File Settings----------------------{{{
+
+if !has("python3")
+    echo "Sorry you won't be able to use Copy-Paste-Vim
+endif
+
 function! Indent() abort
     let l:this_line = line(".")
     normal gg=G
@@ -53,7 +58,7 @@ function! Header_list() abort
 endfunction
 
 function! Expand() abort
-    execute "normal! V?*{\rd"
+    execute "normal! V?{*\rd"
     let l:required = @
     let l:header_list = Header_list()
 python3 << EOF
@@ -100,6 +105,6 @@ augroup cpp
     autocmd FileType cpp nnoremap <buffer> <localleader>sc mqA;<esc>`q 
     autocmd BufWritePre *.cpp :execute "call Indent()"
     autocmd BufNewFile *.cpp :execute "call Setup()" 
-    autocmd FileType cpp :inoremap }* <esc>:execute "call Expand()"<cr>
+    autocmd FileType cpp :inoremap *} <esc>:execute "call Expand()"<cr>
 " }}}
 
