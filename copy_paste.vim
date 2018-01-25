@@ -25,11 +25,12 @@ endfunction
 
 function! Setup() abort
     execute "normal! i#include <iostream>\<C-m>"
-    execute "normal! o#define for(i,n) for(int i = 0; i < n; i++)\<C-m>"
+    execute "normal! o#define fori(i,n) for(int i = 0; i < n; i++)\<C-m>"
     execute "normal! ousing namespace std;\<C-m>"
     execute "normal! oint main(){\<C-m>"
     execute "normal! i\<C-V>\<Tab>\<esc>mqo}\<esc>`qa\<space>"
-    normal a
+    execute "normal! iios_base::sync_with_stdio(false);"
+    execute "normal! ocin.tie(NULL);"
 endfunction
 
 function! Header_list() abort
@@ -58,7 +59,7 @@ function! Header_list() abort
 endfunction
 
 function! Expand() abort
-    execute "normal! V?{*\rd"
+    execute "normal! V?{\\*\rd"
     let l:required = @
     let l:header_list = Header_list()
 python3 << EOF
